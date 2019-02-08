@@ -7,16 +7,16 @@ namespace BeerML
         static void Main(string[] args)
         {
             // 1
-            //BinaryClassification.BinaryClassificationDemo.Run();
+            // BinaryClassification.BinaryClassificationDemo.Run();
 
             // 2
             //MultiClassClassification.MultiClassClassificationDemo.Run();
 
             // 3
-            //Regression.RegressionDemo.Run();
+            Regression.RegressionDemo.Run();
 
             // 4
-            Clustering.ClusteringDemo.Run();
+            // Clustering.ClusteringDemo.Run();
 
             Console.ReadLine();
         }
