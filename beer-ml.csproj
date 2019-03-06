@@ -33,7 +33,13 @@
     <None Update="2_MultiClassClassification\problem2_validate.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="3_Regression\consumption_result.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="3_Regression\consumption_train.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="3_Regression\consumption_training.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="3_Regression\consumption_training.cvs">
