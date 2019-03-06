@@ -32,10 +32,10 @@ namespace BeerML.Regression
         public int Day;
         [Column(ordinal: "3")]
         public float Consumption;
-        [Column(ordinal: "4")]
-        public int Companies;
-        [Column(ordinal: "5")]
-        public int Installations;
+        //[Column(ordinal: "4")]
+        //public int Companies;
+        //[Column(ordinal: "5")]
+        //public int Installations;
     }
 
     public class PricePrediction
@@ -71,8 +71,8 @@ namespace BeerML.Regression
                     new TextLoader.Column("Month", DataKind.I4, 1),
                     new TextLoader.Column("Day", DataKind.I4, 2),
                     new TextLoader.Column("Consumption", DataKind.R4, 3),
-                    new TextLoader.Column("Companies", DataKind.I4, 4),
-                    new TextLoader.Column("Installations", DataKind.I4, 5)
+                    //new TextLoader.Column("Companies", DataKind.I4, 4),
+                    //new TextLoader.Column("Installations", DataKind.I4, 5)
                 }
             });
 
@@ -91,9 +91,9 @@ namespace BeerML.Regression
                                 .Append(mlContext.Transforms.Categorical.OneHotEncoding("Year", "YearEncoded"))
                                 .Append(mlContext.Transforms.Categorical.OneHotEncoding("Month", "MonthEncoded"))
                                 .Append(mlContext.Transforms.Categorical.OneHotEncoding("Day", "DayEncoded"))
-                                .Append(mlContext.Transforms.Categorical.OneHotEncoding("Companies", "CompaniesEncoded"))
-                                .Append(mlContext.Transforms.Categorical.OneHotEncoding("Installations", "InstallationsEncoded"))
-                                .Append(mlContext.Transforms.Concatenate("Features", "YearEncoded", "MonthEncoded", "DayEncoded", "CompaniesEncoded", "InstallationsEncoded"));
+                                //.Append(mlContext.Transforms.Categorical.OneHotEncoding("Companies", "CompaniesEncoded"))
+                                //.Append(mlContext.Transforms.Categorical.OneHotEncoding("Installations", "InstallationsEncoded"))
+                                .Append(mlContext.Transforms.Concatenate("Features", "YearEncoded", "MonthEncoded", "DayEncoded")); // "CompaniesEncoded", "InstallationsEncoded"));
 
 
             // Use Poisson Regressionn
@@ -112,13 +112,13 @@ namespace BeerML.Regression
             // Use model for predictions
             IEnumerable<PriceData> drinks = new[]
             {
-                new PriceData { Year=2018, Month=01, Day=01, Companies=9, Installations=58 },
-                new PriceData { Year=2018, Month=01, Day=02, Companies=9, Installations=58 },
-                new PriceData { Year=2018, Month=01, Day=03, Companies=9, Installations=58 },
-                new PriceData { Year=2018, Month=01, Day=04, Companies=9, Installations=58 },
-                new PriceData { Year=2018, Month=01, Day=05, Companies=9, Installations=58 },
-                new PriceData { Year=2018, Month=01, Day=06, Companies=9, Installations=58 },
-                new PriceData { Year=2018, Month=01, Day=07, Companies=9, Installations=58 }
+                new PriceData { Year=2019, Month=01, Day=01 },
+                new PriceData { Year=2019, Month=01, Day=02 },
+                new PriceData { Year=2019, Month=01, Day=03 },
+                new PriceData { Year=2019, Month=01, Day=04 },
+                new PriceData { Year=2019, Month=01, Day=05 },
+                new PriceData { Year=2019, Month=01, Day=06 },
+                new PriceData { Year=2019, Month=01, Day=07 }
                 //new PriceData { Year="Hofbräu München Weisse", Type="Öl", Volume=500, Country="Tyskland" },
                 //new PriceData { Year="Stefanus Blonde Ale", Type="Öl", Volume=330, Country="Belgien" },
                 //new PriceData { Year="Mortgage 10 years", Type="Whisky", Volume=700, Country="Storbritannien" },

@@ -12,7 +12,6 @@
   <ItemGroup>
     <Folder Include="1_BinaryClassification\" />
     <Folder Include="2_MultiClassClassification\" />
-    <Folder Include="3_Regression\" />
     <Folder Include="4_Clustering\" />
   </ItemGroup>
   <ItemGroup>
@@ -35,6 +34,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="3_Regression\consumption_train.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="3_Regression\consumption_training.cvs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="3_Regression\consumption_validate.csv">
